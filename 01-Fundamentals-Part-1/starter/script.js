@@ -122,3 +122,5 @@ if(money){
 }else{
     console.log("You need a job.")
 }
+
+// // lecture: equality operators: == vs ===
