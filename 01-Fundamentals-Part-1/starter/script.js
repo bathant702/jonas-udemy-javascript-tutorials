@@ -124,3 +124,4 @@ if(money){
 }
 
 // // lecture: equality operators: == vs ===
+// furthermore. a test
