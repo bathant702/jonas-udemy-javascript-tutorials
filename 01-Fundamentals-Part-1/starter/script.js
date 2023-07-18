@@ -125,23 +125,23 @@
 
 // // lecture: equality operators: == vs ===
 
-const age = 18;
-// === example of exact equal
-if(age === 18){
-    console.log(`You're legal now.`)
-}else{
-   yearsLeft = 18 - age;
-   console.log(`You have ${yearsLeft} years left till you're 18.`)
-}
+// const age = 18;
+// // === example of exact equal
+// if(age === 18){
+//     console.log(`You're legal now.`)
+// }else{
+//    yearsLeft = 18 - age;
+//    console.log(`You have ${yearsLeft} years left till you're 18.`)
+// }
 
-// == example of loose equal. it has too many weird rules that can cause bugs for a variety of reasons. avoid using if possible
-if (age == 18) console.log(`You're an adult:D (loose)`);
+// // == example of loose equal. it has too many weird rules that can cause bugs for a variety of reasons. avoid using if possible
+// if (age == 18) console.log(`You're an adult:D (loose)`);
 
 
-const favorite = Number(prompt("What's your favorite number?"));
+// const favorite = Number(prompt("What's your favorite number?"));
 
-console.log(`${favorite} is your favorite number.`);
-console.log(typeof favorite);
+// console.log(`${favorite} is your favorite number.`);
+// console.log(typeof favorite);
 
 // if(favorite === (Number(favorite))){
 //     console.log(`Nice. ${favorite} is a number.`);
@@ -149,16 +149,48 @@ console.log(typeof favorite);
 //     console.log(`That wasn't a number dude.`)
 // }
 
+// if(favorite === 23){
+//     console.log(`Nice. 23 is a number.`);
+// } else if (favorite === 7){
+//     console.log(`7 is also a cool number`);
+// } else if (favorite === (Number(favorite))) {
+//     console.log(`I guess ${favorite} is an okay number`);
+// } else{
+//     console.log(`${favorite} is not a number. Try again.`)
+// }
 
-if(favorite === 23){
-    console.log(`Nice. 23 is a number.`);
-} else if (favorite === 7){
-    console.log(`7 is also a cool number`);
-} else if (favorite === (Number(favorite))) {
-    console.log(`I guess ${favorite} is an okay number`);
-} else{
-    console.log(`${favorite} is not a number. Try again.`)
+// if (favorite !== 23) prompt("Why not 23?")
+
+
+// //lecture: operators
+// A: Age is greater than or equal to 20 = false
+// B: Age is less than 30 = true
+
+// !A = false == true
+// A and B = true and false == false
+// A or B = true or false == true
+// !A and B = true and true == true
+// A or !B = false or false == false
+
+// // lecture: logical operators
+
+const hasDL = true // A
+const hasGoodVis = true // B
+
+console.log(hasDL && hasGoodVis); // this "and both"
+console.log(hasDL || hasGoodVis); // this " either or"
+
+if(hasDL && hasGoodVis){
+    console.log(`Person is able to drive.`)
+} else {
+    console.log(`Someone else should drive.`)
 }
 
+const isTired = true // C
+console.log(hasDL && hasGoodVis && isTired);
 
-if (favorite !== 23) prompt("Why not 23?")
+if (hasDL && hasGoodVis && !isTired){ //take note of ! in !isTired to be false
+    console.log(`You're good to drive.`)
+} else {
+    console.log(`You should have someone else drive.`)
+}
