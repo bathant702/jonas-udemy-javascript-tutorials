@@ -197,14 +197,12 @@
 
 // // lecture: the switch statement
 
-const day = 'wednesdays';
+const day = 'wednesday';
 
-if(wednesday){
+if(day === 'wedneday'){
     console.log("its Wednesday today.");
-    switch(day)
-}else if(thursday){
+}else if(day === 'thursday'){
     console.log("its thursday actually.")
-    switch(day)
 }else{
     console.log("Must be another day");
 }
