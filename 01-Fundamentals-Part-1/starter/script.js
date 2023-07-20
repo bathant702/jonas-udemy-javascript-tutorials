@@ -174,23 +174,63 @@
 
 // // lecture: logical operators
 
-const hasDL = true // A
-const hasGoodVis = true // B
+// const hasDL = true // A
+// const hasGoodVis = true // B
 
-console.log(hasDL && hasGoodVis); // this "and both"
-console.log(hasDL || hasGoodVis); // this " either or"
+// console.log(hasDL && hasGoodVis); // this "and both"
+// console.log(hasDL || hasGoodVis); // this " either or"
 
-if(hasDL && hasGoodVis){
-    console.log(`Person is able to drive.`)
-} else {
-    console.log(`Someone else should drive.`)
+// if(hasDL && hasGoodVis){
+//     console.log(`Person is able to drive.`)
+// } else {
+//     console.log(`Someone else should drive.`)
+// }
+
+// const isTired = true // C
+// console.log(hasDL && hasGoodVis && isTired);
+
+// if (hasDL && hasGoodVis && !isTired){ //take note of ! in !isTired to be false
+//     console.log(`You're good to drive.`)
+// } else {
+//     console.log(`You should have someone else drive.`)
+// }
+
+// // lecture: the switch statement
+
+const day = 'wednesdays';
+
+if(wednesday){
+    console.log("its Wednesday today.");
+    switch(day)
+}else if(thursday){
+    console.log("its thursday actually.")
+    switch(day)
+}else{
+    console.log("Must be another day");
 }
 
-const isTired = true // C
-console.log(hasDL && hasGoodVis && isTired);
 
-if (hasDL && hasGoodVis && !isTired){ //take note of ! in !isTired to be false
-    console.log(`You're good to drive.`)
-} else {
-    console.log(`You should have someone else drive.`)
+switch(day){
+    case 'monday':
+        console.log(`Plan my course structure`);
+        console.log(`Go to code meetup`);
+        break;
+    case 'tuesday':
+        console.log('Job hunt and learn more JS');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Network in linkedin');
+        break;
+    case 'friday':
+        console.log('Prepare for weekend');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('weekend struck and left. back to the grind.');
+        break;
+    default:
+        console.log("This isn't a valid day.")
+
+
 }
