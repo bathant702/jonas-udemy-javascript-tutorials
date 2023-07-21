@@ -197,38 +197,61 @@
 
 // // lecture: the switch statement
 
-const day = 'wednesday';
+// const day = 'wednesday';
 
-if(day === 'wedneday'){
-    console.log("its Wednesday today.");
-}else if(day === 'thursday'){
-    console.log("its thursday actually.")
-}else{
-    console.log("Must be another day");
+// //example the switch function being used
+// switch(day){
+//     case 'monday':
+//         console.log(`Plan my course structure`);
+//         console.log(`Go to code meetup`);
+//         break;
+//     case 'tuesday':
+//         console.log('Job hunt and learn more JS');
+//         break;
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('Network in linkedin');
+//         break;
+//     case 'friday':
+//         console.log('Prepare for weekend');
+//         break;
+//     case 'saturday':
+//     case 'sunday':
+//         console.log('weekend struck and left. back to the grind.');
+//         break;
+//     default:
+//         console.log("This isn't a valid day.")
+// }
+
+// // example of using an if/else statement as a switch
+// if(day === 'wedneday'){
+//     console.log("its Wednesday today.");
+// }else if(day === 'thursday'){
+//     console.log("its thursday actually.")
+// }else{
+//     console.log("Must be another day");
+// }
+
+
+// // lecture: conditional (ternary) arguments
+
+const age = 18;
+// age >= 18 ? console.log("Wine is good.") :
+// console.log("Water only.")
+// this is an example of an if/else statement. if or equal to age number, ? (then do) console.log. : (else) do other console.log
+
+const drink = age >= 18 ? "Wine is good" : "Water only";
+console.log(drink)
+// this is an example of turning the same ternary above into a variable
+
+let drink2;
+if(age >= 18){
+    drink2 = "Have a beer";
+} else{
+    drink2 = "Have a soda.";
 }
+console.log(drink2)
+// this is an example of the same ternary as an if/else statement
 
-
-switch(day){
-    case 'monday':
-        console.log(`Plan my course structure`);
-        console.log(`Go to code meetup`);
-        break;
-    case 'tuesday':
-        console.log('Job hunt and learn more JS');
-        break;
-    case 'wednesday':
-    case 'thursday':
-        console.log('Network in linkedin');
-        break;
-    case 'friday':
-        console.log('Prepare for weekend');
-        break;
-    case 'saturday':
-    case 'sunday':
-        console.log('weekend struck and left. back to the grind.');
-        break;
-    default:
-        console.log("This isn't a valid day.")
-
-
-}
+console.log(`Your legal drink of choice is ${age >= 18 ? 'sake' : 'oj'}.`)
+// this is an example of the same ternary embedded into the statement.
