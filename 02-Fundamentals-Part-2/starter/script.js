@@ -34,3 +34,25 @@
 
 // const appleJuice = fruitProcessor(5,0);
 // console.log(appleJuice);
+
+
+// // lecture: function declaration vs expression
+
+// // example of function declaration
+// function calcAge1(year, birthYear){
+//     const age = year - birthYear;
+//     return age;
+// }
+// let realAge = calcAge1(2023, 1986);
+// console.log(`Your age is ${realAge}.`);
+
+// // example of function expression
+// const calcAge2 = function(currentYear, birthYear){
+//     return currentYear - birthYear;
+// }
+// const realAge2 = calcAge2(2042, 1986);
+// console.log(`This is your age using an anonymous function: ${realAge2}.`);
+
+
+// // lecture: arrow functions
+
