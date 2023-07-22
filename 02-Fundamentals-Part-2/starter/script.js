@@ -38,21 +38,35 @@
 
 // // lecture: function declaration vs expression
 
-// // example of function declaration
-// function calcAge1(year, birthYear){
-//     const age = year - birthYear;
-//     return age;
-// }
-// let realAge = calcAge1(2023, 1986);
-// console.log(`Your age is ${realAge}.`);
+// example of function declaration
+function calcAge1(year, birthYear){
+    const age = year - birthYear;
+    return age;
+}
+let realAge = calcAge1(2023, 1986);
+console.log(`Your age is ${realAge}.`);
 
-// // example of function expression
-// const calcAge2 = function(currentYear, birthYear){
-//     return currentYear - birthYear;
-// }
-// const realAge2 = calcAge2(2042, 1986);
-// console.log(`This is your age using an anonymous function: ${realAge2}.`);
+// example of function expression
+const calcAge2 = function(currentYear, birthYear){
+    return currentYear - birthYear;
+}
+const realAge2 = calcAge2(2042, 1986);
+console.log(`This is your age using an anonymous function: ${realAge2}.`);
 
 
 // // lecture: arrow functions
+// example of arrow function
+const calcAge3 = birthYear => 2020 - birthYear;
+const age3 = calcAge3(1986);
+console.log(`This is the use of an arrow function: ${age3}`);
 
+// example of arrow function with multiple variables
+const yearsUntilRetirement = (currentYear2, birthYear) =>{
+    const age = currentYear2 - birthYear;
+    const retirement = 65 - age;
+    return `You will retire in ${retirement} years.`;
+}
+console.log(yearsUntilRetirement(2023, 1986));
+
+
+// // lecture: functions calling functions
