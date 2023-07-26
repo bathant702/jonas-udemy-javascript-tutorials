@@ -70,45 +70,62 @@
 
 // // lecture: functions calling functions
 
-function cutFruitPieces(fruit){
-    return fruit * 4;
-}
+// function cutFruitPieces(fruit){
+//     return fruit * 4;
+// }
 
-function fruitProcessor( apples, oranges){
-    const applePieces = cutFruitPieces(apples); //turning a called function into a variable to be used. in order to call other fucntions, you need to convert their end process into a variable.
-    console.log(applePieces);
-    const orangePieces = cutFruitPieces(oranges);
-    console.log(orangePieces);
-    let howManyApples = ''; //keep the variable flexible. needs to be called in the function before being used.
-    let howManyOranges = '';
+// function fruitProcessor( apples, oranges){
+//     const applePieces = cutFruitPieces(apples); //turning a called function into a variable to be used. in order to call other fucntions, you need to convert their end process into a variable.
+//     console.log(applePieces);
+//     const orangePieces = cutFruitPieces(oranges);
+//     console.log(orangePieces);
+//     let howManyApples = ''; //keep the variable flexible. needs to be called in the function before being used.
+//     let howManyOranges = '';
     
-    if (apples >= 2){
-        howManyApples = "apples";
-    } else{
-        howManyApples = "apple";
-    }
-    console.log(howManyApples);
+//     if (apples >= 2){
+//         howManyApples = "apples";
+//     } else{
+//         howManyApples = "apple";
+//     }
+//     console.log(howManyApples);
 
-    if (oranges >= 2){
-        howManyOranges = "oranges";
-    } else{
-        howManyOranges = "orange";
-    }
-    console.log(howManyOranges);
+//     if (oranges >= 2){
+//         howManyOranges = "oranges";
+//     } else{
+//         howManyOranges = "orange";
+//     }
+//     console.log(howManyOranges);
 
-    console.log(apples, oranges); //stating the variables
-    const juice = `Juice is made with ${apples} whole ${howManyApples}, cut into ${applePieces} pieces,and ${oranges} whole ${howManyOranges}, cut into ${orangePieces} pieces. Pressed and served. MMMM juice.`; //making the juice variable
-    return juice;
-}
-
-console.log(fruitProcessor(3,1));
+//     console.log(apples, oranges); //stating the variables
+//     const juice = `Juice is made with ${apples} whole ${howManyApples}, cut into ${applePieces} pieces,and ${oranges} whole ${howManyOranges}, cut into ${orangePieces} pieces. Pressed and served. MMMM juice.`; //making the juice variable
+//     return juice;
+// }
+// console.log(fruitProcessor(3,1));
 
 
 // // lecture: function review
 
-const yearsUntilRetirement = (currentYear2, birthYear) =>{
-    const age = currentYear2 - birthYear;
-    const retirement = 65 - age;
-    return `You will retire in ${retirement} years.`;
+const calcAge = function(currentYear, birthYear){
+    return currentYear - birthYear;
 }
-console.log(yearsUntilRetirement(2023, 1986));
+
+const yearsUntilRetirement = function(currentYear, birthYear){
+    const age = calcAge(currentYear, birthYear);
+    const retirement = 65 - age;
+
+    if (retirement <= 0){
+        return `You are already retired.`;
+    }else{
+        return `You will retire in ${retirement} years.`;
+    }
+}
+console.log(yearsUntilRetirement(2023, 1990));
+console.log(yearsUntilRetirement(2023, 1980));
+console.log(yearsUntilRetirement(2023, 2000));
+console.log(yearsUntilRetirement(2023, 1954));
+
+// notes
+// function declaration: can be used before they are declared
+// function expression: a function value stored as a variable
+// arrow function: great, quick one-liner functions. does not use "this" keyword
+// 14:44 is useful as a diagram
