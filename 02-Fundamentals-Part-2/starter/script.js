@@ -69,7 +69,7 @@
 
 
 // // lecture: functions calling functions
-
+/*
 function cutFruitPieces(fruit){
     return fruit * 4;
 }
@@ -101,10 +101,10 @@ function fruitProcessor( apples, oranges){
     return juice;
 }
 console.log(fruitProcessor(3,1));
-
+*/
 
 // // lecture: function review
-
+/*
 const calcAge = function(currentYear, birthYear){
     return currentYear - birthYear;
 }
@@ -123,6 +123,7 @@ console.log(yearsUntilRetirement(2023, 1990));
 console.log(yearsUntilRetirement(2023, 1980));
 console.log(yearsUntilRetirement(2023, 2000));
 console.log(yearsUntilRetirement(2023, 1954));
+*/
 
 // notes
 // function declaration: can be used before they are declared
@@ -147,6 +148,7 @@ TEST DATA 2: Dolphins scored 85, 54, and 41. Koalas scored 23, 34, and 27.
 */
 
 // my solution
+/*
 const calcAvg = (score1,score2, score3) =>{
     return ((score1 + score2 + score3)/3);
 }
@@ -188,3 +190,29 @@ const checkWinner = function (avgDolphins, avgKoalas) {
 };
  
 checkWinner(scoreDolphins, scoreKoalas);
+*/
+
+
+// // lecture: learning about arrays
+
+const friend1 = 'Tim';
+const friend2 = 'Jay';
+const friend3 = 'Hugo';
+
+const friends = ['Tom', 'Jay', 'Hugo', 'Tony'];
+console.log(friends);
+console.log(friends[0]);
+console.log(friends[2]);
+console.log(friends.length);
+console.log(friends[friends.length - 1]); // its 3 - 1 = 2. with 2 being the value, it calculates as Hugo, due to 0, 1, 2
+
+friends[2] = 'Tom'
+console.log(friends[2]);
+
+const fullName = 'Timothy Bathan';
+const tim = [fullName, 2023 - 1986, 'dev', friends];
+console.log(`My bio as Tim: ${tim}`)
+
+
+// const years = new Array(1991, 1984, 2002);
+// console.log(years);
