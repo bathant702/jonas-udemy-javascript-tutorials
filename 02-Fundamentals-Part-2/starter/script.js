@@ -194,7 +194,7 @@ checkWinner(scoreDolphins, scoreKoalas);
 
 
 // // lecture: learning about arrays
-
+/*
 const friend1 = 'Tim';
 const friend2 = 'Jay';
 const friend3 = 'Hugo';
@@ -213,6 +213,48 @@ const fullName = 'Timothy Bathan';
 const tim = [fullName, 2023 - 1986, 'dev', friends];
 console.log(`My bio as Tim: ${tim}`)
 
-
 // const years = new Array(1991, 1984, 2002);
 // console.log(years);
+
+const calcAge = function (birthYear){
+  return 2023 - birthYear;
+}
+
+const years = [1999, 2020, 2000, 1986, 1945];
+
+const year1 = calcAge(years[0]); //1999
+const year2 = calcAge(years[1]); //2020
+const year3 = calcAge(years[years.length - 1]);//calcs at position 3, 1945
+
+console.log(`${year1}, ${year2}, ${year3}`); //displaying age
+
+const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])]; //calling function use for certain parts of an array
+console.log(ages);
+*/
+
+
+// // lecture: array methods
+const friends =  ['Hugo', 'Tom', 'Alex', 'Tony', 'Jay'];
+console.log(friends); //current array
+
+// adding to an array
+const newLength = friends.push('Adam', 'Tammy'); //adds to the end of the array
+console.log(friends);
+console.log(newLength); //calculate new size of array
+const closeFriends = friends.unshift('Ada');//adds to the beginning
+console.log(friends);
+console.log(closeFriends); //calculate new size of array
+
+// removing from an array
+const popped = friends.pop(); //remove from the end
+console.log(popped);
+console.log(friends);
+const shifted = friends.shift(); //remove from the beginning
+console.log(shifted);
+console.log(friends);
+
+console.log(friends.indexOf('Steve')); //checks what spot it's in.
+console.log(friends.indexOf('Jay')); //4ths spot
+
+console.log(friends.includes('Steve')); //checks for true/false. this is false
+console.log(friends.includes('Hugo')); //true
