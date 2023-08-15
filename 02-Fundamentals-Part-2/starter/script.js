@@ -324,8 +324,38 @@ const tim = {
   lastName: 'Bathan',
   age: 2023 - 1986,
   job: 'aspring web developer',
-  family: ['Matt', 'Sara', 'Andrew']
+  family: ['Matt', 'Sara', 'Andrew'],
+  friendGroup: ['Jay', 'Christian', 'Hugo', 'Tom', 'Tony']
 };
 
-console.log(tim);
 console.log(timArray);
+console.log(tim.family); //retrieving data as an object
+console.log(tim['family']);//retrieving data as an object with brackets. we can add an expression to it
+
+const nameKey = 'Name'; // this is connecting a stated name part + the var requested, in this case nameKey.this then brings the requested variable from the array due to the combination of the var and word. kinda weird, but i guess it makes sense if you're being super literal
+console.log(tim['first' + nameKey]);
+console.log(tim['last' + nameKey]);
+console.log(nameKey);
+
+const interestedIn = prompt("What are you interested in knowing about Tim? Choose between firstName, lastName, age, job, and family.")
+// asking a question and an if/else response
+if (tim[interestedIn]){
+  console.log(tim[interestedIn]);
+}else{
+  console.log('Wrong answer. Try again.');
+}
+
+tim.location = 'Las Vegas, NV, US';
+tim['twitter'] = '@somethingsomethingidk';
+console.log(tim);
+
+//Challenge
+//"Tim" has 3 friends, and his best friend is "Christian".
+
+tim.numberOfFriends = 3;
+tim.bestFriend = "Christian";
+console.log(tim);
+console.log(`tim has ${tim.numberOfFriends} friends. his best friend is ${tim.bestFriend}.`)
+
+//or if we're referencing the tim array directly
+console.log(`tim has ${tim.friendGroup.length} friends. his best friend is ${tim.friendGroup[1]}.`)
