@@ -310,7 +310,7 @@ BONUS: Create an array totals containing the total values, so the bill + tip.
 
 
 // // lecture: introduction to objects
-
+/*
 const timArray = [
   'Tim',
   'Bathan',
@@ -359,3 +359,61 @@ console.log(`tim has ${tim.numberOfFriends} friends. his best friend is ${tim.be
 
 //or if we're referencing the tim array directly
 console.log(`tim has ${tim.friendGroup.length} friends. his best friend is ${tim.friendGroup[1]}.`)
+*/
+
+
+// // lecture: object methods
+
+const tim = {
+  firstName: 'Tim',
+  lastName: 'Bathan',
+  birthYear: 2015,
+  job: 'teaching an afterschool program',
+  friends: ['Hugo', 'Tony', 'Jay', 'Christian', 'Tom'],
+  hasDriversLicense: false,
+
+  // calcAge: function(birthYear){ //stanard calling. however, anything put in 'birthYear will be considered the birthYear
+  //   return 2023 - birthYear;
+  // }
+
+  // calcAge: function(){
+  //   console.log(this); //referencing this year
+  //   return 2023 - this.birthYear; //this references the array's birthYear
+  // }
+
+  calcAge: function(){
+    console.log(this);
+    this.age = 2023 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function(){
+    return `${this.firstName} is a ${this.calcAge()}-years old. He is ${tim.job} and has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+  }
+  //in above ?/: is an if/else statement
+
+};
+
+// console.log(tim.calcAge(1991)); //dot notation
+// console.log(tim['calcAge'](2000)); //bracket notation
+// console.log(tim.calcAge(tim.birthYear)); //calling information from the table
+
+console.log(tim.calcAge()); //calling the birthyear without the need to call it
+console.log(tim.age); //and due to previous calling it, it now knows tim.age as the actual age
+
+// Challenge
+// "Tim is a 37 year old teacher and has a driver's license."
+// Prove the above statement by writing a method, similar to what we have been doing.
+
+console.log(tim.getSummary());
+
+//so i totally did this wrong. but i still got it to be proven
+if (tim.age >= 17 && tim.hasDriversLicense === true){
+  console.log(`Tim is ${tim.age}. He is definitely older than 30 and can drive.`)
+} else if (tim.age >= 17 && tim.hasDriversLicense === false){
+  console.log(`Tim is ${tim.age}. He can drive but still needs his license.`)
+} else if (tim.age <= 17 && tim.hasDriversLicense === true){
+  console.log(`Tim is ${tim.age}. How do you have a driver's license??`)
+} else {
+  console.log(`Tim is ${tim.age}. He's till too young to drive, but he's really good at Burnout.`)
+};
