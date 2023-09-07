@@ -363,7 +363,7 @@ console.log(`tim has ${tim.friendGroup.length} friends. his best friend is ${tim
 
 
 // // lecture: object methods
-
+/*
 const tim = {
   firstName: 'Tim',
   lastName: 'Bathan',
@@ -389,17 +389,17 @@ const tim = {
 
   getSummary: function(){
     return `${this.firstName} is a ${this.calcAge()}-years old. He is ${tim.job} and has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
-  }
-  //in above ?/: is an if/else statement
+  } //in above ?/: is an if/else statement
 
 };
 
-// console.log(tim.calcAge(1991)); //dot notation
-// console.log(tim['calcAge'](2000)); //bracket notation
-// console.log(tim.calcAge(tim.birthYear)); //calling information from the table
+console.log(tim.calcAge(1991)); //dot notation
+console.log(tim['calcAge'](2000)); //bracket notation
+console.log(tim.calcAge(tim.birthYear)); //calling information from the table
 
 console.log(tim.calcAge()); //calling the birthyear without the need to call it
 console.log(tim.age); //and due to previous calling it, it now knows tim.age as the actual age
+
 
 // Challenge
 // "Tim is a 37 year old teacher and has a driver's license."
@@ -417,3 +417,63 @@ if (tim.age >= 17 && tim.hasDriversLicense === true){
 } else {
   console.log(`Tim is ${tim.age}. He's till too young to drive, but he's really good at Burnout.`)
 };
+*/
+
+
+// //Challenge #3: using an array and method to have automated calculations.
+/*
+CHALLENGE #3
+Let's go back to Mark and John comparing their BMIs!
+This time, let's use objects to implement the calculations! Remember: BMI = mass / (height * height) (mass in kg and height in meters).
+
+Your tasks:
+1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith). Name these objects as mark and john, and their properties exactly as fullName, mass and height.
+2. Create a calcBMI method on each object to calculate the BMI (the same method on both objects). Assign the BMI value to a property, and also return it from the method.
+3. Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!".
+TEST DATA: Marks weighs 78 kg and is 1.69 m tall. John weighs 92 kg and is 1.95 m tall.
+
+👋 OPTIONAL: You can watch my solution in video format in the next lecture
+IMPORTANT: The ** operator is not supported in this editor. Please make sure to use exactly this formula mass / (height * height), and not this one mass / (height ** 2).
+
+*/
+//my solution/right solution
+/*
+const mark = {
+  fullName: "Mark Miller",
+  height: 1.69,
+  mass: 78,
+
+  calcBMI: function() {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  }
+}
+mark.calcBMI();
+
+const john = {
+  fullName: "John Smith",
+  height: 1.95,
+  mass: 92,
+
+  calcBMI: function() {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  }
+}
+john.calcBMI();
+
+//answer
+console.log(`${mark.fullName}'s BMI is ${mark.bmi}.`);
+console.log(`${john.fullName}'s BMI is ${john.bmi}.`);
+console.log(`${john.bmi > mark.bmi ? `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})!` : `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})!`}`);
+*/
+
+
+// // lecture: loops
+
+for(let i = 10; i >= 0; i = i - 2){
+  console.log(`test ${i}`)
+}
+
+// basic loop formula for JS. uses a for statement to trigger a conditional. from there, it requires 3 parts: the variable, the condition, and the result of execution. console log is there to show results. the results will keep looping until it no longer triggers the condition. from there, it ends 
+
