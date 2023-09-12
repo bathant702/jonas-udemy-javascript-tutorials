@@ -470,10 +470,126 @@ console.log(`${john.bmi > mark.bmi ? `${john.fullName}'s BMI (${john.bmi}) is hi
 
 
 // // lecture: loops
-
+/*
 for(let i = 10; i >= 0; i = i - 2){
   console.log(`test ${i}`)
 }
-
+*/
 // basic loop formula for JS. uses a for statement to trigger a conditional. from there, it requires 3 parts: the variable, the condition, and the result of execution. console log is there to show results. the results will keep looping until it no longer triggers the condition. from there, it ends 
 
+// // lecture: loops continued
+/*
+const timsArray = [
+  'Tim',
+  'Bathan',
+  2037 - 1986,
+  'freelancer dev',
+  ['Jay', 'Christian', 'the boys']
+]
+//mutating an array to fill with data
+const types = [];
+
+// loop code. by i being 0, through the condition of i = the array length, it add 1 to i and then perform the code below.
+for(let i = 0; i < timsArray.length; i++){
+  console.log(timsArray[i], typeof timsArray[i]);
+
+  // // fills types array with data. also known as mutating.
+  // types[i] = typeof timsArray[i];
+
+  // mutates array by adding data to the end of the array
+  types.push(typeof timsArray[i]);
+}
+
+console.log(types);
+
+// practical example
+// const years will be the data we are manipulating
+const years = [2001, 1991, 1999, 1765, 1986, 2021];
+// const ages will be the variable affected by const years
+const ages = [];
+
+for(let i = 0; i < years.length; i++){
+  ages.push(2037 - years[i]);
+  //console.log(ages);
+  // by putting that in there, it will console.log each pass of the loop until finished.
+}
+console.log(ages);
+
+//learning about continue and break for an array
+console.log('--- ONLY STRINGS ---')
+
+// example of continue
+for(let i = 0; i < timsArray.length; i++){
+  // example of using typeof to check the data in the array to see if its a string or not. if string, continue. if not, skip.
+  if(typeof timsArray[i] !== 'string') continue;
+  //print for proof
+  console.log(timsArray[i], typeof timsArray[i]);
+}
+
+// example of break
+console.log('--- BREAK WITH NUMBER ---')
+
+// example of continue
+for(let i = 0; i < timsArray.length; i++){
+  // example of using typeof to check the data in the array to see if its a number or not. if string, continue. if not, break.
+  if(typeof timsArray[i] === 'number') break;
+  //print for proof
+  console.log(timsArray[i], typeof timsArray[i]);
+
+}
+
+
+// overall, these are good for manipulating data, starting and stopping as you please.
+// also, if you use "node" + the js script you want to execute, it will do it in the terminal instead of opening up console on a webpage.
+
+*/
+
+// looping backwards and a loop within a loop
+const timsArray = [
+  'Tim',
+  'Bathan',
+  2037 - 1986,
+  'freelancer dev',
+  ['Jay', 'Christian', 'the boys']
+];
+
+/*
+//loop in reverse
+for(let i = timsArray.length - 1; i >= 0; i-- ){
+  console.log(timsArray[i]);
+}
+
+//loop within a loop
+//goes through one array, in this case, an exercise list
+for(let exercise = 1; exercise < 4; exercise++){
+  console.log(`------- Starting exercise ${exercise}`);
+  //goes through a 2nd array, this time counting down reps
+  for(let rep = 1; rep < 6; rep++){
+    console.log(`Lifting weight repetition ${rep}!`);
+  }
+}
+//prints each exercise, one at a time, with the requested reps
+*/
+
+// while loops
+/*
+for(let rep = 1; rep <= 10; rep++){
+//  console.log(`Lifting weight repetition ${rep}!`);
+}
+
+let rep = 1;
+while (rep<= 10){
+//  console.log("ONE MORE ONE MORE!");
+  rep++;
+}
+
+//d6 dice roller using while loop
+let dice = Math.trunc(Math.random()* 6)  + 1;
+console.log(dice);
+
+while(dice !== 6){
+  console.log(`You rolled a ${dice}.`);
+  dice = Math.trunc(Math.random()* 6)  + 1;
+  if (dice === 6) console.log(`You rolled a ${dice}. Betting is over.`);
+}
+*/
