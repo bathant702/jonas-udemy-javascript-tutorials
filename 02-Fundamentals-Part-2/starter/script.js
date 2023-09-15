@@ -437,7 +437,6 @@ IMPORTANT: The ** operator is not supported in this editor. Please make sure to 
 
 */
 //my solution/right solution
-/*
 const mark = {
   fullName: "Mark Miller",
   height: 1.69,
@@ -466,19 +465,16 @@ john.calcBMI();
 console.log(`${mark.fullName}'s BMI is ${mark.bmi}.`);
 console.log(`${john.fullName}'s BMI is ${john.bmi}.`);
 console.log(`${john.bmi > mark.bmi ? `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})!` : `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})!`}`);
-*/
+
 
 
 // // lecture: loops
-/*
 for(let i = 10; i >= 0; i = i - 2){
   console.log(`test ${i}`)
 }
-*/
 // basic loop formula for JS. uses a for statement to trigger a conditional. from there, it requires 3 parts: the variable, the condition, and the result of execution. console log is there to show results. the results will keep looping until it no longer triggers the condition. from there, it ends 
 
 // // lecture: loops continued
-/*
 const timsArray = [
   'Tim',
   'Bathan',
@@ -542,7 +538,6 @@ for(let i = 0; i < timsArray.length; i++){
 // overall, these are good for manipulating data, starting and stopping as you please.
 // also, if you use "node" + the js script you want to execute, it will do it in the terminal instead of opening up console on a webpage.
 
-*/
 
 // looping backwards and a loop within a loop
 const timsArray = [
@@ -553,7 +548,6 @@ const timsArray = [
   ['Jay', 'Christian', 'the boys']
 ];
 
-/*
 //loop in reverse
 for(let i = timsArray.length - 1; i >= 0; i-- ){
   console.log(timsArray[i]);
@@ -569,10 +563,8 @@ for(let exercise = 1; exercise < 4; exercise++){
   }
 }
 //prints each exercise, one at a time, with the requested reps
-*/
 
 // while loops
-/*
 for(let rep = 1; rep <= 10; rep++){
 //  console.log(`Lifting weight repetition ${rep}!`);
 }
@@ -592,4 +584,107 @@ while(dice !== 6){
   dice = Math.trunc(Math.random()* 6)  + 1;
   if (dice === 6) console.log(`You rolled a ${dice}. Betting is over.`);
 }
+
+
+// //challenge #4 - full tip/total calculator with an array
+/*
+CHALLENGE #4
+Let's improve Steven's tip calculator even more, this time using loops!
+
+Your tasks:
+Create an array called bills containing all 10 test bill values.
+Create empty arrays for the tips and the totals (tips and totals)
+
+Use the calcTip function we wrote before (included in the starter code) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
+
+TEST DATA: 22, 295, 176, 440, 37, 105, 10, 1100, 86, and 52.
+
+BONUS:
+Write a function calcAverage which takes an array called arr as an argument. This function calculates the average of all numbers in the given array. This is a DIFFICULT challenge (we haven't done this before)! Here is how to solve it if you feel like it:
+
+First, you will need to add up all values in the array. To do the addition, start by creating a variable sum that starts at 0. Then loop over the array using a for loop. In each iteration, add the current value to the sum variable. This way, by the end of the loop, you have all values added together.
+
+To calculate the average, divide the sum you calculated before by the length of the array (because that's the number of elements).
+
+Call the function with the totals array.
+
+Use topics 39, 40, and 46 to solve.*/
+
+
+//my solution 1 - 2 loops to push into arrays
+/*
+const bill = [ 22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// const bill = [100, 30, 250];
+
+const calcTip = function(bill){
+  const tip = [];
+  const total = [];
+
+  console.log('Begin calculations.')
+
+  //loop to calculate tip
+  for(let i = 0; i < bill.length; i++){
+  tip.push(bill[i] >= 50 && bill[i] <= 300 ? bill[i] * 0.15 : bill[i] * 0.2);
+  };
+  tip;
+  console.log(tip);
+  console.log('Tips finished. Testing for total.');
+
+  //loop to add tip and bill to get total.
+  for(let i = 0; i < bill.length; i++){
+  total.push(bill[i] + tip[i]);
+  };
+  total;
+  console.log(total);
+  console.log('Total finished. Calculation over.')
+  return
+};
+
+console.log(bill);
+calcTip(bill);
+*/
+
+//my solution 2 - condensed function to 1 loop iteration
+/*
+const bills = [ 22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+const calcTip = function(bills){  
+  //loop
+  for(let i = 0; i < bills.length; i++){
+    //calculate tip
+    tips.push(bills[i] >= 50 && bills[i] <= 300 ? bills[i] * 0.15 : bills[i] * 0.2);
+    //calculate total
+    totals.push(bills[i] + tips[i]);
+    };
+    console.log('Begin calculations.')
+    console.log(bills)
+    console.log('Tips finished. Testing for total.');
+    console.log(tips);
+    console.log('Total finished. Calculation over.')
+    console.log(totals);
+    return
+  };
+
+calcTip(bills);
+*/
+
+// challenge solution
+/*
+const calcTip = function (bill){
+  return bill >= 50 && bill <= 300 ? bill * 0.15: bill * 0.2;
+}
+
+const bills = [ 22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for(let i =0; i < bills.length; i++){
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
+}
+
+console.log(bills, tips, totals);
 */
