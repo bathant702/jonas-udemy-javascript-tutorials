@@ -612,10 +612,10 @@ Use topics 39, 40, and 46 to solve.*/
 
 
 //my solution 1 - 2 loops to push into arrays
-/*
+
 const bill = [ 22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 // const bill = [100, 30, 250];
-
+/*
 const calcTip = function(bill){
   const tip = [];
   const total = [];
