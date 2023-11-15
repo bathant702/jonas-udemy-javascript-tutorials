@@ -64,7 +64,6 @@
 // it does it on its own.
 // so thats convenient.`)
 
-
 // // lecture: if/else statements
 
 // const age = 14;
@@ -87,7 +86,6 @@
 // }
 
 // console.log(century)
-
 
 // // lecture: type conversion and coercion
 // type conversion
@@ -137,7 +135,6 @@
 // // == example of loose equal. it has too many weird rules that can cause bugs for a variety of reasons. avoid using if possible
 // if (age == 18) console.log(`You're an adult:D (loose)`);
 
-
 // const favorite = Number(prompt("What's your favorite number?"));
 
 // console.log(`${favorite} is your favorite number.`);
@@ -160,7 +157,6 @@
 // }
 
 // if (favorite !== 23) prompt("Why not 23?")
-
 
 // //lecture: operators
 // A: Age is greater than or equal to 20 = false
@@ -232,26 +228,47 @@
 //     console.log("Must be another day");
 // }
 
-
 // // lecture: conditional (ternary) arguments
-
-const age = 18;
+/*
+const age = 11;
 // age >= 18 ? console.log("Wine is good.") :
 // console.log("Water only.")
 // this is an example of an if/else statement. if or equal to age number, ? (then do) console.log. : (else) do other console.log
 
 const drink = age >= 18 ? "Wine is good" : "Water only";
-console.log(drink)
+console.log(drink);
 // this is an example of turning the same ternary above into a variable
 
 let drink2;
-if(age >= 18){
-    drink2 = "Have a beer";
-} else{
-    drink2 = "Have a soda.";
+if (age >= 18) {
+  drink2 = "Have a beer";
+} else {
+  drink2 = "Have a soda.";
 }
-console.log(drink2)
+console.log(drink2);
 // this is an example of the same ternary as an if/else statement
 
-console.log(`Your legal drink of choice is ${age >= 18 ? 'sake' : 'oj'}.`)
+console.log(`Your legal drink of choice is ${age >= 18 ? "sake" : "oj"}.`);
 // this is an example of the same ternary embedded into the statement.
+*/
+/*
+const name = "Tim";
+const address = "10101 Mine Cove Dr, Las Vegas, NV, Mars";
+const age = 5000;
+const job = "professor of awesome";
+
+const description = [
+  "Tim",
+  "10101 Mine Cove Dr, Las Vegas, NV, Mars",
+  5000,
+  "professor of awesome",
+];
+
+// array
+// string = information that uses letters, whether a phrase, a word, or a single letter;
+// number = information that uses numerical values at all ranges (negatives to infinity);
+// boolean = true or false; true false, false true, falsy, truthy:
+
+// console.log(name, address, age, job);
+console.log(description);
+*/
