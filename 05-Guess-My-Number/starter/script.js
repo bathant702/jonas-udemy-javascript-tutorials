@@ -4,8 +4,6 @@
 console.log(document.querySelector('.message').textContent);
 // this piece of code selects the element with class="message". it starts with document.querySelector('.message'), with "." signifying class. If we wanted to do with an ID, we'd use "#" instead. the .textContent selects the text in that element.
 
-
-
 console.log(document.querySelector('.message').textContent);
 
 document.querySelector('.number').textContent = 13;
@@ -16,9 +14,8 @@ console.log(document.querySelector('.guess').value);
 */
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-//rnd number
+//random number
 let score = 20;
-let highscore;
 document.querySelector('.number').textContent = secretNumber;
 //user guessing
 
@@ -38,14 +35,22 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = 'Correct Number!';
     //if it is the correct number
-    document.querySelector('.score').textContent = highscore;
-    //records your high score
   } else if (guess > secretNumber) {
-    document.querySelector('.message').textContent = 'Too high!';
-    //if it is too high
-    score--;
-    document.querySelector('.score').textContent = score;
-    //minus your score
+    if (score > 0) {
+      document.querySelector('.message').textContent = 'Too high!';
+      //if it is too high
+      score--;
+      document.querySelector('.score').textContent = score;
+      //minus your score
+    } else {
+      document.querySelector('.message').textContent = 'You lost the game.';
+      //if score is 0
+      secretNumber = Math.trunc(Math.random() * 20) + 1;
+      document.querySelector('.number').textContent = secretNumber;
+      score = 20;
+      document.querySelector('.score').textContent = score;
+      //reset game
+    }
   } else if (guess < secretNumber) {
     if (score > 0) {
       document.querySelector('.message').textContent = 'Too low!';
@@ -56,11 +61,11 @@ document.querySelector('.check').addEventListener('click', function () {
     } else {
       document.querySelector('.message').textContent = 'You lost the game.';
       //if score is 0
-      let newSecretNumber = Math.trunc(Math.random() * 20) + 1;
-      newSecretNumber = secretNumber;
+      secretNumber = Math.trunc(Math.random() * 20) + 1;
+      document.querySelector('.number').textContent = secretNumber;
       score = 20;
       document.querySelector('.score').textContent = score;
-      //reset?
+      //reset game
     }
   }
 });
