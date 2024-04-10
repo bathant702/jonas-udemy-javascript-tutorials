@@ -13,66 +13,67 @@ document.querySelector('.guess').value = 23;
 console.log(document.querySelector('.guess').value);
 */
 
-let secretNumber = Math.trunc(Math.random() * 20) + 1;
 //random number
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
+//number of tries/score
 let score = 20;
+//user guess
 document.querySelector('.number').textContent = secretNumber;
-//user guessing
 
+//using quesrySelector to get the value of the guess input whenever a class with 'check' is clicked
+//event listener works like this .addEventListener ('action-performed', function of deciding result(){});
 document.querySelector('.check').addEventListener('click', function () {
-  //using quesrySelector to get the value of the guess input whenever a class with 'check' is clicked
-  //event listener works like this .addEventListener ('action-performed', function of deciding result(){});
-  console.log(document.querySelector('.guess').value);
   //console.log proves that the function works in console
+  console.log(document.querySelector('.guess').value);
 
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
+  //!guess means "if guess is 0/false, then do a thing"
   if (!guess) {
-    //!guess means "if guess is 0/false, then do a thing"
-    document.querySelector('.message').textContent = 'No number!';
     //if there is no number
+    document.querySelector('.message').textContent = 'No number!';
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent =
       '🎉🎉🎉 Correct!!! 🎉🎉🎉 To play again, guess a new number.';
+    //reset game
     secretNumber = Math.trunc(Math.random() * 20) + 1;
     document.querySelector('.number').textContent = secretNumber;
     score = 20;
-    document.querySelector('.score').textContent = score;
-    //reset game
     //if it is the correct number
+    document.querySelector('.score').textContent = score;
   } else if (guess > secretNumber) {
     if (score > 0) {
-      document.querySelector('.message').textContent = 'Too high!';
       //if it is too high
+      document.querySelector('.message').textContent = 'Too high!';
+      //minus your score
       score--;
       document.querySelector('.score').textContent = score;
-      //minus your score
     } else {
-      document.querySelector('.message').textContent = 'You lost the game.';
       //if score is 0
+      document.querySelector('.message').textContent = 'You lost the game.';
+      //reset game
       secretNumber = Math.trunc(Math.random() * 20) + 1;
       document.querySelector('.number').textContent = secretNumber;
       score = 20;
       document.querySelector('.score').textContent = score;
-      //reset game
     }
   } else if (guess < secretNumber) {
     if (score > 0) {
-      document.querySelector('.message').textContent = 'Too low!';
       //if it is too low
+      document.querySelector('.message').textContent = 'Too low!';
+      //minus your score
       score--;
       document.querySelector('.score').textContent = score;
-      //minus your score
     } else {
+      //if score is 0
       document.querySelector('.message').textContent =
         'You lost the game. To play again, guess a new number.';
-      //if score is 0
+      //reset game
       secretNumber = Math.trunc(Math.random() * 20) + 1;
       document.querySelector('.number').textContent = secretNumber;
       score = 20;
       document.querySelector('.score').textContent = score;
-      //reset game
     }
   }
 });
