@@ -33,7 +33,13 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = 'No number!';
     //if there is no number
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = 'Correct Number!';
+    document.querySelector('.message').textContent =
+      '🎉🎉🎉 Correct!!! 🎉🎉🎉 To play again, guess a new number.';
+    secretNumber = Math.trunc(Math.random() * 20) + 1;
+    document.querySelector('.number').textContent = secretNumber;
+    score = 20;
+    document.querySelector('.score').textContent = score;
+    //reset game
     //if it is the correct number
   } else if (guess > secretNumber) {
     if (score > 0) {
@@ -59,7 +65,8 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = score;
       //minus your score
     } else {
-      document.querySelector('.message').textContent = 'You lost the game.';
+      document.querySelector('.message').textContent =
+        'You lost the game. To play again, guess a new number.';
       //if score is 0
       secretNumber = Math.trunc(Math.random() * 20) + 1;
       document.querySelector('.number').textContent = secretNumber;
