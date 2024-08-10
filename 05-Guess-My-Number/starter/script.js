@@ -16,7 +16,7 @@ document.querySelector('.check').addEventListener('click', function () {
   //!guess means "if guess is 0/false, then do a thing"
   if (!guess) {
     //if there is no number
-    document.querySelector('.message').textContent = 'No number!';
+    document.querySelector('.message').textContent = '🛑 No number!';
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent =
       '🎉🎉🎉 Correct!!! 🎉🎉🎉 To play again, guess a new number.';
@@ -66,3 +66,11 @@ document.querySelector('.check').addEventListener('click', function () {
     }
   }
 });
+
+/* use an if/else statement for the highscore and compare it at the end of the function.
+but how would i take the value of the score and turn it into a high score?
+
+1. it depends if u win or lose. if you lose the game (score becomes 0), game resets and proceeds as usual.
+2. if you win, your score is compared to the highscore. if score is > high score, it replaces the high score to become the new high score. if not, high score is maintained and game resets again.
+3. 
+*/
