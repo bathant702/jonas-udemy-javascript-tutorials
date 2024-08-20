@@ -21,6 +21,11 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent =
       '🎉🎉🎉 Correct!!! 🎉🎉🎉 To play again, guess a new number.';
 
+    //color change for win
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    //score highlight
+    document.querySelector('.number').style.width = '30rem';
+
     //reset game
     secretNumber = Math.trunc(Math.random() * 20) + 1;
     document.querySelector('.number').textContent = secretNumber;
