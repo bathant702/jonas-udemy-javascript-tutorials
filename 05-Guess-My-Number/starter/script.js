@@ -1,23 +1,13 @@
 'use strict';
 
-/*
-Coding Challenge #1
-
-Implement a game reset functionality so that the player can start a new game and make a new guess. Tasks:
-
-1. Select the element with the “again” class and attach a click even handler.
-2. In the handler function, restore initial values of the score and the secretNumber variables.
-3. Restore the initial conditions of the message, number, score, and guess input field.
-4. Restore the original background color (#222) and number width (15rem) to the text field.
-
-Good luck. 
-*/
-
 //random number
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 //number of tries/score
 let score = 20;
+
+//high score
+let highscore = 0;
 
 document.querySelector('.check').addEventListener('click', function () {
   console.log(document.querySelector('.guess').value);
@@ -37,15 +27,18 @@ document.querySelector('.check').addEventListener('click', function () {
 
     //correct number displays
     document.querySelector('.number').textContent = secretNumber;
-
     //color change for win
     document.querySelector('body').style.backgroundColor = '#60b347';
-
     //score highlight
     document.querySelector('.number').style.width = '30rem';
-
     //if it is the correct number
     document.querySelector('.score').textContent = score;
+
+    //highscore display
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
   } else if (guess > secretNumber) {
     //if it is too high
     if (score > 0) {
@@ -108,6 +101,19 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#333';
   document.querySelector('.number').style.width = '6rem';
 });
+*/
+
+/*
+Coding Challenge #1
+
+Implement a game reset functionality so that the player can start a new game and make a new guess. Tasks:
+
+1. Select the element with the “again” class and attach a click even handler.
+2. In the handler function, restore initial values of the score and the secretNumber variables.
+3. Restore the initial conditions of the message, number, score, and guess input field.
+4. Restore the original background color (#222) and number width (15rem) to the text field.
+
+Good luck. 
 */
 
 /* this is partially right. it does reset the value, but it doesnt hide the new number nor does it reset the colors. i know how to reset the number, but how do i hide it from showing.*/
