@@ -34,25 +34,17 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.highscore').textContent = highscore;
     }
 
-    //if not the right number
-  } else if (guess > secretNumber) {
-    //if it is too high
-    if (score > 0) {
-      document.querySelector('.message').textContent = 'Too high!';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = 'You lost the game.';
-    }
-  } else if (guess < secretNumber) {
-    //if it is too low
-    if (score > 0) {
-      document.querySelector('.message').textContent = 'Too low!';
+    //if guess is wrong
+  } else if (guess !== secretNumber) {
+    if (guess > 1) {
+      document.querySelector('.message').textContent =
+        guess > secretNumber ? 'Too high!' : 'Too low!';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
       document.querySelector('.message').textContent =
-        'You lost the game. To play again, guess a new number.';
+        'Game over. You lose. Try again?';
+      document.querySelector('.score').textContent = 0;
     }
   }
 });
