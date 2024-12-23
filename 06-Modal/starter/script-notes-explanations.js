@@ -35,3 +35,23 @@ const closeModal = function () {
 //by creating a function, you can refactor the code, making it easier and neater
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+
+//event listener to use Escape to close modal
+document.addEventListener('keydown', function (e) {
+    console.log(e.key);
+  
+    if (e.key === 'Escape') {
+      if (!modal.classList.contains('hidden')) {
+        closeModal();
+        console.log('Esc was pressed.');
+      }
+    }
+  });
+
+  //escape event listener refactored
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });

@@ -25,3 +25,10 @@ for (let i = 0; i < btnOpenModal.length; i++)
 //open and close of modal
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+//event listener to use Escape to close modal
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
